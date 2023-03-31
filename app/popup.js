@@ -1,14 +1,15 @@
-import { getPlayerById } from "./services/getPlayerById.js";
-import { createPlayer } from "./services/createPlayer.js";
-import { updatePlayer } from "./services/updatePlayer.js";
-import { deletePlayer } from "./services/deletePlayer.js";
-import { renderPlayerList } from "./main.js";
+import { getPlayerById } from "../services/getPlayerById.js";
+import { createPlayer } from "../services/createPlayer.js";
+import { updatePlayer } from "../services/updatePlayer.js";
+import { deletePlayer } from "../services/deletePlayer.js";
+import { renderPlayerList } from "../main.js";
 
 function applyPopupFunctionality() {
   const openPopupNewPlayer = document.getElementById("add-player");
   openPopupNewPlayer.addEventListener("click", async function () {
+    const avatarURL = generateAvatar();
     document.getElementById("input-player-id").value = "";
-    document.getElementById("input-player-photo").value = generateAvatar();
+    document.getElementById("input-player-photo").value = avatarURL;
     document.getElementById("input-player-name").value = "";
     document.getElementById("input-player-number").value = "";
     document.getElementById("input-player-position").value = "";
@@ -17,11 +18,21 @@ function applyPopupFunctionality() {
 
     document.getElementById("save-type").value = "CREATE";
 
+    document.getElementById("img-container").innerHTML = `
+        <img
+          class="img-avatar-popup"
+          src=${avatarURL}
+          alt="Avatar"
+        />
+    `;
     const popupForm = document.getElementById("container-popup");
     popupForm.style.display = "flex";
 
     const deleteButton = document.getElementById("delete-button");
     deleteButton.style.display = "none";
+
+    const mainPage = document.querySelector("main");
+    mainPage.style.opacity = 0.6;
   });
 
   const openPopupUpdatePlayer = document.querySelectorAll(".button-edit");
@@ -39,18 +50,34 @@ function applyPopupFunctionality() {
       document.getElementById("input-player-goals").value = player.goals;
       document.getElementById("save-type").value = "UPDATE";
 
+      document.getElementById("img-container").innerHTML = `
+        <img
+          class="img-avatar-popup"
+          src=${player.photo}
+          alt="Avatar"
+        />
+    `;
+
       const popupForm = document.getElementById("container-popup");
       popupForm.style.display = "flex";
 
       const deleteButton = document.getElementById("delete-button");
       deleteButton.style.display = "inline-block";
+
+      const mainPage = document.querySelector("main");
+      mainPage.style.opacity = 0.6;
     });
   });
 
   const closePopup = document.getElementById("close-popup");
   closePopup.addEventListener("click", () => {
+    document.getElementById("img-container").innerHTML = "";
+
     const popupForm = document.getElementById("container-popup");
     popupForm.style.display = "none";
+
+    const mainPage = document.querySelector("main");
+    mainPage.style.opacity = 1;
   });
 
   const saveButton = document.getElementById("save-button");
@@ -80,7 +107,6 @@ function applyPopupFunctionality() {
       club: newPlayerClub,
       goals: newPlayerGoals,
     };
-    console.log("bodiiii", data);
 
     if (saveType === "CREATE") {
       await createPlayer(data);
@@ -95,6 +121,9 @@ function applyPopupFunctionality() {
 
     const popupForm = document.getElementById("container-popup");
     popupForm.style.display = "none";
+
+    const mainPage = document.querySelector("main");
+    mainPage.style.opacity = 1;
   });
 
   const deleteButton = document.getElementById("delete-button");
@@ -106,12 +135,14 @@ function applyPopupFunctionality() {
     await deletePlayer(playerId);
 
     renderPlayerList();
+
+    const mainPage = document.querySelector("main");
+    mainPage.style.opacity = 1;
   });
 }
 
 function generateAvatar() {
   const randomNumber = Math.floor(Math.random() * 999) + 1;
-  console.log(randomNumber);
   return `https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/${randomNumber}.jpg`;
 }
 

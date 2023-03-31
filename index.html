@@ -14,9 +14,15 @@
     ></script>
   </head>
   <body>
-    <!-- <header><h1>Top Scorers</h1></header> -->
     <main>
-      <h1>Top Scorers</h1>
+      <div class="heading-section"><h1>Players List</h1></div>
+      <input type="text" id="filter-player" placeholder="Search player" />
+      <button id="submit-filter">Search</button>
+      <button id="add-player">Add Player</button>
+
+      <section id="player-list" class="cards"></section>
+
+      <div class="heading-section"><h1>Top Scorers</h1></div>
       <section class="container podium">
         <div id="podium-2" class="podium__item"></div>
 
@@ -24,21 +30,15 @@
 
         <div id="podium-3" class="podium__item"></div>
       </section>
-
-      <h1>Players List</h1>
-      <input type="text" id="filter-player" placeholder="Search player" />
-      <button id="submit-filter">Search</button>
-      <button id="add-player">Add Player</button>
-
-      <section id="player-list" class="cards"></section>
     </main>
     <div id="container-popup">
       <div id="popup-form">
-        <button id="close-popup">X</button>
+        <div><button id="close-popup">X</button></div>
         <form>
           <input type="hidden" id="save-type" />
           <input type="hidden" id="input-player-id" />
           <input type="hidden" id="input-player-photo" />
+          <div id="img-container"></div>
           <label>
             <span>Name</span>
             <input id="input-player-name" type="text" />
@@ -64,9 +64,10 @@
             <input id="input-player-goals" type="number" />
           </label>
           <br />
-
-          <button id="save-button">Save</button>
-          <button id="delete-button">Delete</button>
+          <div id="button-container">
+            <button type="submit" id="save-button">Save</button>
+            <button id="delete-button">Delete</button>
+          </div>
         </form>
       </div>
     </div>

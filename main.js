@@ -1,39 +1,6 @@
-// import {
-//   getAllPlayers,
-//   getPlayerById,
-//   addPlayer,
-//   updatePlayer,
-// } from "./crud.js";
-
 import { getAllPlayers, filterPlayers } from "./services/getPlayers.js";
-import { applyPopupFunctionality } from "./popup.js";
-
-const podiums = [
-  {
-    name: "Ronaldo",
-    age: 37,
-    club: "Real Madrid",
-    goals: 100,
-    photo:
-      "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/557.jpg",
-  },
-  {
-    name: "Messi",
-    age: 35,
-    club: "Barcelona",
-    goals: 87,
-    photo:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-  },
-  {
-    name: "Neymar",
-    age: 29,
-    club: "PSG",
-    goals: 10,
-    photo:
-      "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1.jpg",
-  },
-];
+import { applyPopupFunctionality } from "./app/popup.js";
+import { applyFilterFunctionality } from "./app/filter.js";
 
 function addPodiumComponent(podium, i) {
   const rank = ["first", "second", "third"];
@@ -46,7 +13,7 @@ function addPodiumComponent(podium, i) {
         alt="Avatar ${podium.name}"
     />
     </div>
-    <p class="podium__city">${podium.name}</p>
+    <p class="podium__city"><b>${podium.name}</b></p>
     <p class="podium__city">${podium.club}</p>
     <div class="podium__rank ${rank[i]}">${podium.goals}</div>
     `;
@@ -70,19 +37,11 @@ async function renderPlayersPodium() {
   displayAllPodium(podiums);
 }
 
-// document.addEventListener(
-//   "DOMContentLoaded",
-//   function () {
-//     renderPlayersPodium();
-//   },
-//   false
-// );
-
 function playerComponent(player) {
   return `
   <div class="card">
     <div>
-      <button type="submit" id="button-edit-${player.id}" class="button-edit">
+      <button id="button-edit-${player.id}" class="button-edit">
         <img src="assets/edit-button.png" alt="button edit"/>
       </button>
     </div>
@@ -109,13 +68,32 @@ function displayPlayerList(players) {
 async function renderPlayerList() {
   const players = await getAllPlayers();
   displayPlayerList(players);
-  // applyPopupFunctionality();
+  applyPopupFunctionality();
+}
+
+// async function renderPlayerListFromFilter() {
+//   const applyFilter = document.getElementById("submit-filter");
+//   applyFilter.addEventListener("click", async function () {
+//     const keyword = document.getElementById("filter-player").value;
+//     const players = await filterPlayers(keyword);
+//     displayPlayerList(players);
+//   });
+// }
+
+async function renderPlayerListFromFilter() {
+  const keyword = document.getElementById("filter-player");
+  keyword.addEventListener("input", async function () {
+    const players = await filterPlayers(keyword.value);
+    displayPlayerList(players);
+    applyFilterFunctionality();
+  });
 }
 
 async function renderFootballApp() {
   await renderPlayersPodium();
   await renderPlayerList();
-  applyPopupFunctionality();
+  await renderPlayerListFromFilter();
+  //applyPopupFunctionality();
 }
 
 addEventListener("DOMContentLoaded", function () {
