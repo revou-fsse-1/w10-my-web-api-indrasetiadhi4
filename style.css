@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+body {
+  font-family: poppins;
+}
+
+/* main {
+  opacity: 0.4;
+} */
+
+.container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.podium__item {
+  width: 200px;
+}
+
+.podium__rank {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  color: #fff;
+}
+
+.podium__city {
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.podium__avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.avatar {
+  width: 75px;
+  height: auto;
+  padding: 0.5rem;
+  border-radius: 9999px;
+}
+
+.podium__number {
+  width: 27px;
+  height: 75px;
+}
+
+.podium .first {
+  min-height: 300px;
+  background: rgb(255, 172, 37);
+  background: linear-gradient(
+    333deg,
+    rgba(255, 172, 37, 1) 0%,
+    rgba(254, 207, 51, 1) 13%,
+    rgba(254, 224, 51, 1) 53%,
+    rgba(255, 172, 37, 1) 100%
+  );
+}
+
+.podium .second {
+  min-height: 200px;
+  background: blue;
+}
+
+.podium .third {
+  min-height: 100px;
+  background: green;
+}
+
+.cards {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fill, 180px);
+  grid-auto-rows: auto;
+  grid-gap: 8rem;
+  border: 1px;
+  border-color: black;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  position: relative;
+}
+
+.card .img-avatar {
+  width: 180px;
+  /* height: auto;
+  padding: 0.5rem;
+  border-radius: 9999px; */
+}
+
+.card h4 {
+  font-size: 18px;
+  padding: 0.5rem;
+  margin: 0;
+  text-align: center;
+}
+
+.card p {
+  font-size: 14px;
+  text-align: center;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  margin: 0;
+}
+
+.card .goals {
+  font-size: 14px;
+  padding: 0.2rem 0.5rem 0.5rem 0.5rem;
+  margin: 0;
+}
+
+.button-edit {
+  background-color: transparent;
+  padding: 8px;
+  border: 0;
+  opacity: 0.6;
+  cursor: pointer;
+  /* width: 8px;
+  height: auto; */
+  position: absolute;
+  float: right;
+  right: 0;
+}
+
+.button-edit img {
+  width: 32px;
+  height: auto;
+}
+
+.button-edit:hover {
+  opacity: 1;
+}
+
+.reveal-modal {
+  position: relative;
+  margin: 0 auto;
+  top: 25%;
+}
+
+#container-popup {
+  width: 100%;
+  top: 20%;
+  position: fixed;
+  /* visibility: visible; */
+  display: none; /*flex*/
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+#container-popup:target {
+  visibility: visible;
+  display: block;
+}
+
+#popup-form {
+  background-color: white;
+  padding: 32px;
+  border: 0.5px solid black;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin: 0 auto;
+  top: 25%;
+}
+
+.delete-button {
+  display: inline-block;
+}

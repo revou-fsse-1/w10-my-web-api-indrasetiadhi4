@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Players</title>
+    <link href="./style.css" rel="stylesheet" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js"
+      integrity="sha512-LUKzDoJKOLqnxGWWIBM4lzRBlxcva2ZTztO8bTcWPmDSpkErWx0bSP4pdsjNH8kiHAUPaT06UXcb+vOEZH+HpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- <header><h1>Top Scorers</h1></header> -->
+    <main>
+      <h1>Top Scorers</h1>
+      <section class="container podium">
+        <div id="podium-2" class="podium__item"></div>
+
+        <div id="podium-1" class="podium__item"></div>
+
+        <div id="podium-3" class="podium__item"></div>
+      </section>
+
+      <h1>Players List</h1>
+      <input type="text" id="filter-player" placeholder="Search player" />
+      <button id="submit-filter">Search</button>
+      <button id="add-player">Add Player</button>
+
+      <section id="player-list" class="cards"></section>
+    </main>
+    <div id="container-popup">
+      <div id="popup-form">
+        <button id="close-popup">X</button>
+        <form>
+          <input type="hidden" id="save-type" />
+          <input type="hidden" id="input-player-id" />
+          <input type="hidden" id="input-player-photo" />
+          <label>
+            <span>Name</span>
+            <input id="input-player-name" type="text" />
+          </label>
+          <br />
+          <label>
+            <span>Number</span>
+            <input id="input-player-number" type="number" />
+          </label>
+          <br />
+          <label>
+            <span>Position</span>
+            <input id="input-player-position" type="text" />
+          </label>
+          <br />
+          <label>
+            <span>Club</span>
+            <input id="input-player-club" type="text" />
+          </label>
+          <br />
+          <label>
+            <span>Goals</span>
+            <input id="input-player-goals" type="number" />
+          </label>
+          <br />
+
+          <button id="save-button">Save</button>
+          <button id="delete-button">Delete</button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

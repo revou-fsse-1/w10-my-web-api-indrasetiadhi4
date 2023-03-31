@@ -1,0 +1,94 @@
+{
+  "players": [
+    {
+      "name": "Ronaldo",
+      "number": "7",
+      "position": "Forward",
+      "club": "Al Nassr",
+      "goals": "200",
+      "photo": "https://b.fssta.com/uploads/application/soccer/headshots/885.vresize.350.350.medium.14.png",
+      "id": 1
+    },
+    {
+      "name": "Messi",
+      "number": "30",
+      "position": "Forward",
+      "club": "Paris SG",
+      "goals": "150",
+      "photo": "https://b.fssta.com/uploads/application/soccer/headshots/711.vresize.350.350.medium.70.png",
+      "id": 2
+    },
+    {
+      "name": "Hazard",
+      "number": "7",
+      "position": "Forward",
+      "club": "Real Madrid",
+      "goals": "0",
+      "photo": "https://b.fssta.com/uploads/application/soccer/headshots/215.vresize.350.350.medium.52.png",
+      "id": 3
+    },
+    {
+      "name": "De Bruyne",
+      "number": "7",
+      "position": "Midfielder",
+      "club": "Manchester City",
+      "goals": "8",
+      "photo": "https://b.fssta.com/uploads/application/soccer/headshots/2342.vresize.350.350.medium.24.png",
+      "id": 4
+    },
+    {
+      "name": "Sergio Ramos",
+      "number": "4",
+      "position": "Defender",
+      "club": "Paris SG",
+      "goals": "3",
+      "photo": "https://b.fssta.com/uploads/application/soccer/headshots/884.vresize.350.350.medium.61.png",
+      "id": 5
+    },
+    {
+      "name": "Haaland",
+      "number": "9",
+      "position": "Forward",
+      "club": "Manchester City",
+      "goals": "90",
+      "photo": "https://b.fssta.com/uploads/application/soccer/headshots/66617.vresize.350.350.medium.77.png",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "name": "Neymar",
+      "number": 10,
+      "position": "Forward",
+      "club": "Paris SG",
+      "goals": 11,
+      "photo": "https://b.fssta.com/uploads/application/soccer/headshots/713.vresize.350.350.medium.34.png"
+    },
+    {
+      "id": 8,
+      "name": "Mbappe",
+      "number": 7,
+      "position": "Forward",
+      "club": "Paris SG",
+      "goals": 10,
+      "photo": "https://b.fssta.com/uploads/application/soccer/headshots/40670.vresize.350.350.medium.91.png"
+    },
+    {
+      "id": 9,
+      "name": "Salah",
+      "number": 11,
+      "position": "Forward",
+      "club": "Liverpool",
+      "goals": 22,
+      "photo": "https://b.fssta.com/uploads/application/soccer/headshots/224.vresize.350.350.medium.68.png"
+    },
+    {
+      "id": 10,
+      "name": "Bruno Fernandes",
+      "number": 8,
+      "position": "Midfielder",
+      "club": "Manchester United",
+      "goals": 9,
+      "photo": "https://b.fssta.com/uploads/application/soccer/headshots/1593.vresize.350.350.medium.21.png"
+    }
+  ]
+}
