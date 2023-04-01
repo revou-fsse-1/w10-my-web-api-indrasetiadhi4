@@ -12,9 +12,24 @@ body {
   opacity: 0.4;
 } */
 
+.header-container {
+  color: darkblue;
+  font-variant: small-caps;
+  text-align: center;
+  font-size: x-large;
+}
+
 .heading-section {
   margin-top: 64px;
   margin-left: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.heading-section img {
+  width: 64px;
+  height: 64px;
+  margin-left: 16px;
 }
 
 .container {
@@ -239,6 +254,7 @@ body {
 
 #delete-button {
   display: inline-block;
+  background-color: rgba(255, 0, 0, 0.589);
 }
 
 #close-popup {
