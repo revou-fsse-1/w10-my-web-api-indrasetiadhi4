@@ -2,7 +2,7 @@ import { getPlayerById } from "../services/getPlayerById.js";
 import { createPlayer } from "../services/createPlayer.js";
 import { updatePlayer } from "../services/updatePlayer.js";
 import { deletePlayer } from "../services/deletePlayer.js";
-import { renderPlayerList } from "../main.js";
+import { renderPlayerList } from "../dashboard/dashboard.js";
 
 function applyPopupFunctionality() {
   const openPopupNewPlayer = document.getElementById("add-player");
@@ -117,7 +117,7 @@ function applyPopupFunctionality() {
     }
     // await updatePlayer(data);
 
-    renderPlayerList();
+    //renderPlayerList();
 
     const popupForm = document.getElementById("container-popup");
     popupForm.style.display = "none";

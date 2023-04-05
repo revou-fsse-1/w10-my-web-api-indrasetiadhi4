@@ -2,7 +2,7 @@ import { getPlayerById } from "../services/getPlayerById.js";
 import { createPlayer } from "../services/createPlayer.js";
 import { updatePlayer } from "../services/updatePlayer.js";
 import { deletePlayer } from "../services/deletePlayer.js";
-import { renderPlayerList } from "../main.js";
+//import { renderPlayerList } from "../main.js";
 
 function applyFilterFunctionality() {
   const openPopupUpdatePlayer = document.querySelectorAll(".button-edit");

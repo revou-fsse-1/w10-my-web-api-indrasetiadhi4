@@ -1,4 +1,48 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "Admin123"
+    },
+    {
+      "username": "indra",
+      "email": "indra@gmail.com",
+      "password": "indra123",
+      "id": 2
+    },
+    {
+      "username": "asdas",
+      "email": "asd@asd",
+      "password": "asd",
+      "id": 3
+    },
+    {
+      "username": "qqq",
+      "email": "indra1@gmail.com",
+      "password": "qwe",
+      "id": 4
+    },
+    {
+      "username": "aaaa",
+      "email": "indra@gmail.comm",
+      "password": "wwww",
+      "id": 5
+    },
+    {
+      "username": "sad",
+      "email": "indra@gmail.comee",
+      "password": "eerr",
+      "id": 6
+    },
+    {
+      "username": "aaaaee",
+      "email": "indra@gmail.comq",
+      "password": "ononon12345",
+      "id": 7
+    }
+  ],
   "players": [
     {
       "name": "Ronaldo",
